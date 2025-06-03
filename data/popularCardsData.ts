@@ -5,7 +5,6 @@ export type PopularCard = {
   btnText: string;
 };
 
-
 export const popularCardsData: PopularCard[] = [
   {
     title: "New movie is released!",
