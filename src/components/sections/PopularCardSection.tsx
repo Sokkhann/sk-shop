@@ -6,7 +6,6 @@ export default function PopularCardSection() {
     <div className="px-12 pt-12">
       <div className="flex justify-between">
         <PopularCardComponent />
-        
         <PopularCardComponent />
       </div>
     </div>
