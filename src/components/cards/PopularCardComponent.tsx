@@ -1,26 +1,28 @@
+import { popularCardsData } from "data/popularCardsData";
 import Image from "next/image";
 import React from "react";
 
+
 export default function PopularCardComponent() {
   return (
-    <div className="w-[45%]">
-      <div className="card card-side bg-base-100 shadow-sm">
-        <figure>
-          <Image
-            width={300}
-            height={0}
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-            alt="Movie"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">New movie is released!</h2>
-          <p>Click the button to watch on Jetflix app.</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
+    <div className="flex overflow-x-auto space-x-4 scroll-container">
+      {popularCardsData.map((item, idx) => (
+        <div
+          key={idx}
+          className="card card-side bg-base-100 w-[1000px] shadow-sm"
+        >
+          <figure className="w-[300px]">
+            <Image width={300} height={300} src={item.image} alt={item.title} />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{item.title}</h2>
+            <p>{item.description}</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">{item.btnText}</button>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }

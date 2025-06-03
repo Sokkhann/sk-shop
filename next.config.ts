@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
    images: {
-    domains: ['img.daisyui.com'], // add any external image domains here
+    domains: ['img.daisyui.com','i.pinimg.com'], // add any external image domains here
   },
 };
 
